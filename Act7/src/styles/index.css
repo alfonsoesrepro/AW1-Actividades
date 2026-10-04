@@ -4,8 +4,17 @@
     box-sizing: border-box;
 }
 
+/* Grilla del layout */
 body {
     background-color: #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "cabecera"
+        "principal"
+        "pie";
+    min-height: 100vh;
 }
 
 .logo {
@@ -19,7 +28,14 @@ body {
     justify-content: center;
 }
 
+/* Encabezado inmóvil */
 .encabezado-principal {
+    grid-area: cabecera;    
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px 0;
+    border-bottom: 1px solid #333333;
     background-color: #000000;
     text-align: center;
     display: flex;
@@ -35,6 +51,7 @@ body {
 }
 
 .cuerpo-principal {
+    grid-area: principal;
     background-color: #000000;
     color: #eeeaea;
     font-family: Helvetica, sans-serif;
@@ -48,10 +65,31 @@ body {
 }
 
 .pie-principal {
+    grid-area: pie;
     margin-top: 24px;
     padding: 16px 0;
     border-top: 1px solid #333333;
     background-color: #000000;
     color: #ffffff;
     font-family: Helvetica, sans-serif;
+}
+
+/* Vínculo flotante de mensajería externa */
+.enlace-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    padding: 12px 20px;
+    background-color: #25d366;
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+}
+
+.enlace-flotante:hover, .enlace-flotante:focus {
+    background-color: #1ebe5a;
 }
