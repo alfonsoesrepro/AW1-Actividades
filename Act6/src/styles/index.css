@@ -1,0 +1,255 @@
+/* 
+   Organización:
+   1. MODELO DE CAJA ALTERNATIVO Y RESETEO BÁSICO
+   2. SELECTORES
+        2.1. De tipo
+        2.2. De clase
+        2.3. Combinados
+*/
+ 
+ 
+
+
+/* 1. MODELO DE CAJA ALTERNATIVO Y RESETEO BÁSICO */
+ 
+/* Modelo de caja alternativo: width/height incluyen padding y borde. */
+html {
+    box-sizing: border-box;
+}
+ 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+ 
+/* Reseteo de márgenes y rellenos */
+body,
+h1, h2, h3,
+p,
+ul, ol, li,
+form, fieldset,
+figure,
+hr {
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Listas sin viñetas */
+ul, ol {
+    list-style: none;
+}
+ 
+/* Enlaces sin subrayado */
+a {
+    text-decoration: none;
+}
+ 
+/* Herencia de tipografía */
+input, select, textarea, button {
+    font: inherit;
+    color: inherit;
+}
+ 
+ 
+
+
+/* 2. SELECTORES */
+
+/* 2.1. De tipo */
+ 
+html {
+    font-size: 100%;
+}
+ 
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2b2b2b;
+    background-color: #f4f5f7;
+}
+ 
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.25;
+    color: #1f3a5f;
+}
+ 
+h1 {
+    font-size: 2.25rem;
+}
+ 
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+ 
+p {
+    margin-bottom: 1rem;
+}
+ 
+a {
+    color: #2f6f8f;
+}
+ 
+a:hover,
+a:focus {
+    color: #1f3a5f;
+    text-decoration: underline;
+}
+ 
+hr {
+    border: none;
+    border-top: 1px solid #d5d9e0;
+    margin: 1.5rem 0;
+}
+ 
+label {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 0.35rem;
+}
+ 
+input, select, textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #b8bfcc;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+ 
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #2f6f8f;
+    outline-offset: 1px;
+}
+ 
+textarea {
+    resize: vertical;
+}
+ 
+ 
+
+/* 2.2. De clase */
+
+.cabecera {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+}
+
+.principal {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #d5d9e0;
+    border-radius: 6px;
+}
+
+.pie {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #5a6270;
+}
+ 
+ 
+
+/* 2.3. Combinados */
+
+/* Cabecera */
+.cabecera h1 {
+    margin-bottom: 0.25rem;
+}
+ 
+.cabecera h2 {
+    font-size: 1.15rem;
+    font-weight: normal;
+    color: #5a6270;
+    margin-bottom: 1.25rem;
+}
+ 
+/* Navegación principal */
+.navegacion-principal {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+ 
+.navegacion-principal a {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1f3a5f;
+    border-radius: 4px;
+}
+ 
+.navegacion-principal a:hover,
+.navegacion-principal a:focus {
+    background-color: #2f6f8f;
+    text-decoration: none;
+}
+ 
+
+/* Principal: secciones y listas */
+.principal .bloque-seccion {
+    padding: 0.5rem 0;
+}
+ 
+.principal .bloque-seccion h2 {
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #2f6f8f;
+}
+ 
+.principal .bloque-seccion ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+ 
+.principal .bloque-seccion li {
+    margin-bottom: 0.5rem;
+}
+ 
+/* Formulario de contacto */
+.principal .formulario-contacto {
+    max-width: 600px;
+    margin-top: 1.5rem;
+}
+ 
+.formulario-contacto .campo-formulario {
+    margin-bottom: 1.25rem;
+}
+ 
+.formulario-contacto input[type="submit"] {
+    width: auto;
+    padding: 0.75rem 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1f3a5f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+ 
+.formulario-contacto input[type="submit"]:hover,
+.formulario-contacto input[type="submit"]:focus {
+    background-color: #2f6f8f;
+}
+ 
+
+/* Pie */
+.pie p {
+    margin-bottom: 0;
+}
