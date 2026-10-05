@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultá disponibilidad y reservá tu cabaña en Retiro Sustentable, San Javier, Traslasierra, Córdoba.">
+    <title>Retiro Sustentable - Reservas</title>
+    <link rel="stylesheet" href="./recursos/css/index.css">
+</head>
+<body>
+    <!--
+        La interacción del formulario (validaciones, disponibilidad, confirmación) se resolvería con
+        JavaScript actualizando partes de la página, sin recargarla. El formulario igual se construye
+        con HTML estándar para que funcione aunque el JavaScript no cargue (mejora progresiva).
+    -->
+
+    <header class="encabezado">
+        
+        <!-- alt: es el texto del enlace para lectores de pantalla y lo que se ve si la imagen no carga. -->
+        
+        <a class="logo" href="index.html">
+            <img src="./recursos/imagenes/logo-rs.svg" alt="Retiro Sustentable, ir al inicio" width="180" height="60">
+        </a>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a class="menu-enlace" href="index.html">Inicio</a></li>
+                <li><a class="menu-enlace" href="reservas.html" aria-current="page">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <h1>Reservas</h1>
+        
+        <!-- Era un <h4>: después de un h1 corresponde un h2. Los niveles de título no se saltean ni se eligen por tamaño. -->
+        
+        <h2>Contactanos</h2>
+        <p>Completá el formulario y te respondemos con la disponibilidad. Los campos son obligatorios salvo los marcados como opcionales.</p>
+
+        <!-- Atributos del formulario:
+             action  -> dirección que recibe los datos. "/api/reservas" es provisoria: hay que
+                        reemplazarla por la del servicio real cuando esté definido el backend.
+             method  -> "post" porque se envían datos personales y se crea una consulta nueva;
+                        con "get" los datos viajarían a la vista en la URL. -->
+        
+        <form class="formulario" action="/api/reservas" method="post">
+            <fieldset class="grupo">
+                <legend>Datos de contacto</legend>
+
+                <!-- Cada <label> se enlaza a su campo con for = id del campo. Así el lector de pantalla
+                     lee la etiqueta al enfocar el campo y un clic en el texto lo activa.
+                     name es la clave con la que el dato llega al servidor; sin name, el campo no se envía.
+                     El <div> sólo agrupa etiqueta y campo para darles espaciado con CSS. -->
+                
+                <div class="campo">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono (opcional)</label>
+                    <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+                </div>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+                <legend>Estadía</legend>
+
+                <!-- type="date" muestra el selector de fechas nativo y envía siempre el formato AAAA-MM-DD.
+                     Controlar que "hasta" sea posterior a "desde" requiere JavaScript y también
+                     una validación en el servidor. -->
+                
+                <div class="campo">
+                    <label for="fecha-desde">Fecha desde</label>
+                    <input type="date" id="fecha-desde" name="fecha_desde" required>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha-hasta">Fecha hasta</label>
+                    <input type="date" id="fecha-hasta" name="fecha_hasta" required>
+                </div>
+
+                <div class="campo">
+                    <label for="comentario">Comentario (opcional)</label>
+                    <textarea id="comentario" name="comentario" rows="5"></textarea>
+                </div>
+            </fieldset>
+
+            <button class="boton" type="submit">Enviar consulta</button>
+        </form>
+    </main>
+
+    <footer class="pie">
+        <p>&copy; 2026 Retiro Sustentable. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

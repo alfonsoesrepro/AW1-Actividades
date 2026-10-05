@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cabañas totalmente equipadas para alquiler al pie de la montaña en San Javier, Traslasierra, Córdoba.">
+    <title>Retiro Sustentable - Catálogo de cabañas</title>
+    <link rel="stylesheet" href="./recursos/css/index.css">
+</head>
+<body>
+    <header class="encabezado">
+        
+        <!-- El isologotipo enlaza al inicio, que es la convención que los usuarios esperan.
+             El atributo alt es importante porque: 1) como la imagen es el único contenido del
+             enlace, el alt pasa a ser el texto del enlace para lectores de pantalla;
+             2) se muestra si la imagen no carga; 3) los buscadores lo usan para entender la imagen.
+             width y height reservan el espacio antes de que cargue y evitan saltos de layout. -->
+        
+             <a class="logo" href="index.html">
+            <img src="./recursos/imagenes/logo-rs.svg" alt="Retiro Sustentable, ir al inicio" width="180" height="60">
+        </a>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a class="menu-enlace" href="index.html" aria-current="page">Inicio</a></li>
+                <li><a class="menu-enlace" href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        
+        <!-- Había dos <h1>. Se deja uno solo: es el título principal de la página y encabeza
+             la jerarquía de títulos (h1 > h2 > h3) que usan buscadores y lectores de pantalla. -->
+        
+        <h1>Cabañas para alquiler</h1>
+        <p>Bienvenido a nuestro catálogo de cabañas, ubicadas al pie de la montaña en San Javier, Traslasierra, Córdoba. Explorá nuestras opciones y encontrá la que mejor se adapte a tus necesidades.</p>
+
+        <!-- <section> en lugar de <div>: agrupa contenido de un mismo tema y lleva su propio título. -->
+        
+        <section aria-labelledby="titulo-catalogo">
+            <h2 id="titulo-catalogo">Catálogo de cabañas</h2>
+
+            <!-- Este <div> se mantiene a propósito: sólo agrupa las tarjetas para armar la grilla
+                 con CSS y no aporta significado. Ese es el uso correcto de un elemento no semántico. -->
+            
+            <div class="catalogo">
+                
+                <!-- <article> en lugar de <div>: cada cabaña es una unidad con sentido completo por sí
+                     sola (título, foto, descripción, precio), que podría reutilizarse en otro lugar. -->
+                
+                <article class="cabana">
+                    <h3>Cabaña 1</h3>
+                    
+                    <!-- <picture> ofrece WebP (más liviano) y deja el JPG como alternativa para
+                         navegadores que no lo soporten. El alt describe lo que se ve en la foto. -->
+                    
+                    <picture>
+                        <source srcset="./recursos/imagenes/modelo1.webp" type="image/webp">
+                        <img class="cabana-imagen" src="./recursos/imagenes/modelo1.jpg" alt="Cabaña de madera de una planta, elevada sobre pilotes, con galería iluminada en la ladera de la sierra al atardecer" width="960" height="717">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam nesciunt eaque dolorem repellat accusantium tempora nobis.</p>
+                    <p class="precio"><data value="85000">$ 85.000</data> por día</p>
+                    
+                    <!-- El texto del enlace nombra la cabaña: un "Reservar" repetido cuatro veces no se
+                         distingue cuando el lector de pantalla lista los enlaces de la página. -->
+                    
+                    <a class="boton" href="reservas.html">Reservar Cabaña 1</a>
+                </article>
+
+                <article class="cabana">
+                    <h3>Cabaña 2</h3>
+                    <picture>
+                        <source srcset="./recursos/imagenes/modelo2.webp" type="image/webp">
+                        <img class="cabana-imagen" src="./recursos/imagenes/modelo2.jpg" alt="Cabaña de madera de una planta con galería techada y grandes ventanales, con las sierras de fondo" width="960" height="717">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolores, ipsam laborum necessitatibus sapiente veniam nihil ducimus quas.</p>
+                    <p class="precio"><data value="95000">$ 95.000</data> por día</p>
+                    <a class="boton" href="reservas.html">Reservar Cabaña 2</a>
+                </article>
+
+                <article class="cabana">
+                    <h3>Cabaña 3</h3>
+                    <picture>
+                        <source srcset="./recursos/imagenes/modelo3.webp" type="image/webp">
+                        
+                        <!-- loading="lazy": las fotos que quedan fuera de la primera pantalla se descargan
+                             recién cuando el usuario se acerca a ellas, y la carga inicial es más rápida. -->
+                        
+                        <img class="cabana-imagen" src="./recursos/imagenes/modelo3.jpg" alt="Cabaña de madera de dos plantas con balcón y galería, rodeada de pinos" width="960" height="717" loading="lazy">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam rerum molestiae, voluptates officia doloribus eligendi cumque minima iure.</p>
+                    <p class="precio"><data value="120000">$ 120.000</data> por día</p>
+                    <a class="boton" href="reservas.html">Reservar Cabaña 3</a>
+                </article>
+
+                <article class="cabana">
+                    <h3>Cabaña 4</h3>
+                    <picture>
+                        <source srcset="./recursos/imagenes/modelo4.webp" type="image/webp">
+                        <img class="cabana-imagen" src="./recursos/imagenes/modelo4.jpg" alt="Cabaña de madera de dos plantas con balcón y luces exteriores encendidas al anochecer" width="960" height="717" loading="lazy">
+                    </picture>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus optio, excepturi incidunt deleniti repudiandae placeat earum quaerat natus.</p>
+                    <p class="precio"><data value="135000">$ 135.000</data> por día</p>
+                    <a class="boton" href="reservas.html">Reservar Cabaña 4</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>&copy; 2026 Retiro Sustentable. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
