@@ -24,3 +24,4 @@ botonAgregar.addEventListener('click', () => {
 
 // getItem -> Leer
 // setItem -> Escribir
+
