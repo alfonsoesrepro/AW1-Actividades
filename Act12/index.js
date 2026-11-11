@@ -123,3 +123,4 @@ console.log(productosConDescuento)
 const productosConStock = productos.filter((producto) => producto.stock > 10)
  
 console.log(productosConStock)
+
